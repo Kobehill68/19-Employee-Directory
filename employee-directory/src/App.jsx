@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import Container from './components/Container.jsx';
-import FilterInput from './components/FilterInput.jsx';
-import Table from './components/Table.jsx';
-import Jumbotronheader from './components/Jumbotron.jsx';
+import Container from './component/Container.jsx';
+import FilterInput from './component/FilterInput.jsx';
+import Table from './component/Table.jsx';
+import Jumbotronheader from './component/Jumbotron.jsx';
 import { getUsers } from './utils/API.jsx';
 import './App.css';
 
