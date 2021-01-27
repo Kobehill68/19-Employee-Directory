@@ -10,7 +10,7 @@ const Jumbotronheader = (props) => {
                     <p className='lead'>
                         This is My Employee Directory, There are Many Like it but this one
                         is mine!
-          </p>
+                    </p>
                 </Container>
             </Jumbotron>
         </div>
