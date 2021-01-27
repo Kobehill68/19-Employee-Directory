@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import Container from './components/Container.jsx';
+import FilterInput from './components/FilterInput.jsx';
+import Table from './components/Table.jsx';
+import Jumbotronheader from './components/Jumbotron.jsx';
+import { getUsers } from './utils/API.jsx';
 import './App.css';
 
 function App() {
+  const [initialUsers, updateAvailableUsers] = useState([]);
+  const [usersToRender, updateUsersToRender] = useState([]);
+
+  useEffect(() => {
+    getUsers().then(({ data: { results } }) => updateAvailableUsers(results));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid={true}>
+      <Jumbotronheader />
+      <div className='App'>
+        <p>Search by First Name!</p>
+        <FilterInput users={initialUsers} updateUsers={updateUsersToRender} />
+
+        <Table users={usersToRender} dark={true} />
+      </div>
+    </Container>
   );
 }
 
