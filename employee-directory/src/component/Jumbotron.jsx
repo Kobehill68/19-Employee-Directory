@@ -9,8 +9,8 @@ const Jumbotronheader = (props) => {
                 <Container fluid>
                     <h1 className='display-3'>Employee Directory</h1>
                     <p className='lead'>
-                        This is My Employee Directory, There are Many Like it but this one
-                        is mine!
+                        Welcome to the Employee Directory for AIRSHOTS.LLC. Please
+                        feel free to look at are employee's.
                     </p>
                 </Container>
             </Jumbotron>
